@@ -1,9 +1,9 @@
-from parser import evtx_to_jsonl
+from log_parser import evtx_to_jsonl
 from detectors import detect_bruteforce_failed_4625
 from alert import write_alerts
 import pathlib
 
-EVTX_IN = "data/Security_4625_failed_logons.evtx"   # put your sample here
+EVTX_IN = "CA_4624_4625_LogonType2_LogonProc_chrome.evtx"   # put your sample here
 JSONL_OUT = "out/security.jsonl"
 
 def run_pipeline():
