@@ -15,7 +15,7 @@ def jsonl_records(path: str) -> Iterable[Dict[str, Any]]:
             yield json.loads(line)
 
 def detect_bruteforce_failed_4625(jsonl_path: str,
-                                  window_seconds=120, threshold=5):
+                                  window_seconds=600, threshold=3):
     """
     Flag source IPs with >= threshold failed logons (4625) within time window.
     Returns a list of alerts (dicts).

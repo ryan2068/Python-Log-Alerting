@@ -3,7 +3,7 @@ from detectors import detect_bruteforce_failed_4625
 from alert import write_alerts
 import pathlib
 
-EVTX_IN = "CA_4624_4625_LogonType2_LogonProc_chrome.evtx"   # put your sample here
+EVTX_IN = "data/CA_4624_4625_LogonType2_LogonProc_chrome.evtx"   # put your sample here
 JSONL_OUT = "out/security.jsonl"
 
 def run_pipeline():
@@ -11,7 +11,7 @@ def run_pipeline():
         print("[*] Parsing EVTX -> JSONL …")
         evtx_to_jsonl(EVTX_IN, JSONL_OUT)
     print("[*] Running detectors …")
-    alerts = detect_bruteforce_failed_4625(JSONL_OUT, window_seconds=120, threshold=5)
+    alerts = detect_bruteforce_failed_4625(JSONL_OUT, window_seconds=1000, threshold=1)
     write_alerts(alerts)
 
 if __name__ == "__main__":
