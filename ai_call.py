@@ -4,7 +4,7 @@ import json
 
 # URL and model can be overridden with environment variables if needed
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434")
-MODEL = os.getenv("OLLAMA_MODEL", "llama3:8b-instruct")
+MODEL = os.getenv("OLLAMA_MODEL", "mistral")
 
 def ai_triage(alert: dict) -> dict:
     """
